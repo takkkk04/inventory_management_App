@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>農薬棚卸しアプリ</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <header class="app_header">
+        <h1>農薬在庫棚卸し</h1>
+    </header>
+    <main>
+        <section class="form_section">
+            <h2>在庫入力</h2>
+
+            <form id="inventory_form">
+
+                <div class="form_row">
+                    <label for="date">入力日</label>
+                    <input type="date" id="date" required>
+                </div>
+
+                <div class="form_row">
+                    <label for="name">農薬名</label>
+                    <input type="text" id="name" required>
+                </div>
+
+                <div class="form_row">
+                    <label for="spec">規格</label>
+                    <input type="text" id="spec" required>
+                </div>
+
+                <div class="form_row">
+                    <label for="expire_ym">有効期限</label>
+                    <input type="month" id="expire_ym" required>
+                </div>
+
+                <div class="form_row">
+                    <label for="quantity">数量</label>
+                    <input type="number" id="quantity" min="0" step="1" required>
+                </div>
+
+                <div class="form_row form_row_buttons">
+                    <button type="button" id="save_btn">保存</button>
+                    <button type="reset">リセット</button>
+                </div>
+            </form>
+        </section>
+
+        <section class="list_section">
+            <h2>在庫一覧</h2>
+
+            <table id="inventory_table">
+                <thead>
+                    <tr>
+                        <th>入力日</th>
+                        <th>農薬名</th>
+                        <th>規格</th>
+                        <th>有効期限</th>
+                        <th>数量</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+        </section>
+
+    </main>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="module" src="app.js"></script>
+
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-app.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        import { getFirestore } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-firestore.js";
+
+        // https://firebase.google.com/docs/web/setup#available-libraries
+
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyCIa0poRFvt_1iu-_sB_sPbSZGAry3_0nw",
+            authDomain: "inventory-management-app-de0dd.firebaseapp.com",
+            projectId: "inventory-management-app-de0dd",
+            storageBucket: "inventory-management-app-de0dd.firebasestorage.app",
+            messagingSenderId: "425516704110",
+            appId: "1:425516704110:web:fba2934ea2414873d2217f"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+        window.db = db;
+    </script>
+
+</body>
+
+</html>

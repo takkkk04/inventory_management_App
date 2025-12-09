@@ -1,0 +1,200 @@
+body {
+    font-family: "Noto Sans JP", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: #f5f7fb;
+    color: #333;
+    margin: 0;
+    padding: 16px;
+}
+
+.app_header {
+    text-align: center;
+    padding: 16px 8px;
+    background: linear-gradient(135deg, #4caf50, #2e7d32);
+    color: #fff;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    margin-bottom: 20px;
+}
+
+.app_header h1 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 0.08em;
+}
+
+main {
+    max-width: 960px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.4fr);
+    gap: 20px;
+}
+
+.form_section,
+.list_section {
+    background: #fff;
+    border-radius: 10px;
+    padding: 18px 20px 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+}
+
+.form_section h2,
+.list_section h2 {
+    margin: 0 0 12px;
+    font-size: 18px;
+    border-left: 4px solid #4caf50;
+    padding-left: 8px;
+}
+
+#inventory_form {
+    margin-top: 8px;
+}
+
+.form_row {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 14px;
+}
+
+label {
+    font-weight: 600;
+    font-size: 13px;
+    margin-bottom: 4px;
+}
+
+input,
+textarea {
+    padding: 8px 10px;
+    font-size: 14px;
+    border-radius: 6px;
+    border: 1px solid #cfd3dc;
+    background: #fafbff;
+    box-sizing: border-box;
+    transition: 
+        border-color 0.15s ease,
+        box-shadow 0.15s ease, 
+        background-color 0.15s ease;
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+    border-color: #4caf50;
+    box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.18);
+    background-color: #fff;
+}
+
+textarea {
+    min-height: 80px;
+    resize: vertical;
+}
+
+.form_row_buttons {
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 4px;
+}
+
+button {
+    font-family: inherit;
+    border: none;
+    cursor: pointer;
+}
+
+#save_btn {
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+    background: linear-gradient(135deg, #4caf50, #2e7d32);
+    border-radius: 6px;
+    box-shadow: 0 3px 0 #1b5e20;
+    transform: translateY(0);
+    transition: 
+        transform 0.08s ease,
+        box-shadow 0.08s ease,
+        filter 0.12s ease;
+}
+
+#save_btn:hover {
+    filter: brightness(1.05);
+}
+
+#save_btn:active {
+    transform: translateY(2px);
+    box-shadow: 0 1px 0 #1b5e20;
+}
+
+button[type="reset"] {
+    padding: 8px 14px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #555;
+    background: #e3e7f1;
+    border-radius: 6px;
+    box-shadow: 0 2px 0 #b0b6c5;
+    transform: translateY(0);
+    transition: 
+        transform 0.08s ease,
+        box-shadow 0.08s ease,
+        background-color 0.12s ease;
+}
+
+button[type="reset"]:hover {
+    background-color: #d6dbea;
+}
+
+button[type="reset"]:active {
+    transform: translateY(2px);
+    box-shadow: 0 1px 0 #b0b6c5;
+}
+
+#inventory_table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    margin-top: 8px;
+}
+
+#inventory_table thead {
+    background: #e8f5e9;
+}
+
+#inventory_table th {
+    padding: 8px 6px;
+    border-bottom: 1px solid #e0e3eb;
+    text-align: left;
+    font-weight: 600;
+    color: #2e7d32;
+    border-bottom: 2px solid #c8e6c9;
+}
+
+#inventory_table td {
+    padding: 8px 6px;
+    border-bottom: 1px solid #e0e3eb;
+    text-align: left;
+}
+
+#inventory_table tbody tr:nth-child(even) {
+    background-color: #fafbff;
+}
+
+@media(max-width: 768px) {
+    body {
+        padding: 8px;
+    }
+
+    main {
+        display: block;
+    }
+
+    .form_section,
+    .list_section {
+        margin-bottom: 16px;
+    }
+
+    .app_header h1 {
+        font-size: 20px;
+    }
+}
